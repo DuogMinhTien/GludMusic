@@ -1,0 +1,127 @@
+:root {
+    --symbol-select-color: #fff;
+    --current-value-range: 0;
+}
+
+$symbol-select-color: var(--symbol-select-color);
+.glud-select {
+    $symbol-size: 6px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: calc($symbol-size + 22px);
+    font-size: 1.4rem;
+    font-family: Arial, Helvetica, sans-serif;
+    width: max-content;
+    min-width: 100px;
+    max-width: 250px;
+    .glud-title-select {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        cursor: pointer;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: calc(50% + $symbol-size/2);
+        transform: translateY(-50%);
+        right: 6px;
+        border: $symbol-size solid $symbol-select-color;
+        border-color: $symbol-select-color transparent transparent transparent;
+    }
+    .glud-option {
+        display: none;
+    }
+    .glud-select-child {
+        position: absolute;
+        top: calc(100% + 10px);
+        border: 1px solid #666666;
+        background-color: #313131;
+        left: 0;
+        width: max-content;
+        min-width: 100%;
+        border-radius: 2px;
+        display: none;
+        z-index: 100;
+        .glud-option {
+            display: block;
+            padding: 5px 6px;
+            position: relative;
+            &[selected="true"] {
+                padding-left: 20px;
+                &::before {
+                    content: "✔";
+                    font-size: 1.4rem;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 6px;
+                }
+            }
+            &:hover {
+                background-color: #333;
+            }
+        }
+    }
+}
+
+.glud-range {
+    --height: 6px;
+    --active-background: #fff;
+    --normal-background: #333;
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    -moz-appearance: none;
+    height: var(--height);
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+    background: linear-gradient(to right, var(--active-background) 0%, var(--active-background) 0%, var(--normal-background) 0%, var(--normal-background) 100%);
+    align-self: center;
+    cursor: pointer;
+    &:hover {
+        &::-webkit-slider-thumb {
+            width: calc(var(--height)*2);
+            height: calc(var(--height)*2);
+            border-radius: 100rem;
+        }
+        &::-moz-range-thumb {
+            width: calc(var(--height)*2);
+            height: calc(var(--height)*2);
+            border-radius: 100rem;
+        }
+    }
+}
+
+.glud-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    filter: brightness(100%);
+    border: none;
+    width: 0;
+    height: 0;
+    background-color: var(--active-background);
+    cursor: pointer;
+    transition: .1s;
+    transform-origin: center;
+}
+
+.glud-range::-moz-range-thumb {
+    -moz-appearance: none;
+    filter: brightness(100%);
+    appearance: none;
+    width: 0;
+    height: 0;
+    border: none;
+    opacity: 1;
+    background-color: var(--active-background);
+    cursor: pointer;
+    transition: .1s;
+    transform-origin: center;
+}

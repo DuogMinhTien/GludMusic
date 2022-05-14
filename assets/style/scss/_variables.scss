@@ -1,0 +1,11 @@
+:root {
+    --primary-color-light: #ff5e00;
+    --primary-color: #eb7734;
+    --primary-color-bold: #662500;
+    --height-audio-control: 80px;
+}
+
+$primary-color: var(--primary-color);
+$primary-color-bold: var(--primary-color-bold);
+$primary-color-light: var(--primary-color-light);
+$height-audio-control: var(--height-audio-control);

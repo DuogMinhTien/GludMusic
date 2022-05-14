@@ -1,0 +1,133 @@
+{
+    "songs": [{
+            "id": 1,
+            "name": "Khuê Mộc Lang | Hương Ly & Jombie (G5R)",
+            "channel_id": 1,
+            "img": "https://o.vdoc.vn/data/image/2021/08/21/loi-bai-hat-khue-moc-lang-700.jpg",
+            "music": "https://duogminhtien.github.io/GludMusicAssets/audio/khue_moc_lan.mp3"
+        },
+        {
+            "id": 2,
+            "name": "Về Nghe Mẹ Ru | NSND Bạch Tuyết - Hoàng Dũng - Hứa Kim Tuyền - 14 Casper",
+            "channel_id": 2,
+            "img": "https://i.ytimg.com/vi/msR8HTOPjKY/maxresdefault.jpg",
+            "music": "https://duogminhtien.github.io/GludMusicAssets/audio/ve_nghe_me_ru.mp3"
+        },
+        {
+            "id": 3,
+            "name": "Em Đã Xa Anh | Như Việt",
+            "channel_id": 3,
+            "img": "https://nhachot.vn/wp-content/uploads/2022/03/43_maxresdefault.jpg",
+            "music": "https://duogminhtien.github.io/GludMusicAssets/audio/em_da_xa_anh.mp3"
+        },
+        {
+            "id": 4,
+            "name": "Tình Ka | DanhKa",
+            "channel_id": 4,
+            "img": "https://i.ytimg.com/vi/J5oaDY6EWOI/maxresdefault.jpg",
+            "music": "https://duogminhtien.github.io/GludMusicAssets/audio/tinh_ka.mp3"
+        },
+        {
+            "id": 5,
+            "name": "Gió Vẫn Hát | Long Phạm",
+            "channel_id": 5,
+            "img": "https://i.ytimg.com/vi/1d2HfH8EBsk/maxresdefault.jpg",
+            "music": "https://duogminhtien.github.io/GludMusicAssets/audio/gio_van_hat.mp3"
+        },
+        {
+            "id": 6,
+            "name": "Đào Nương | Hoàng Vương (Prod: Thành Acoustic)",
+            "channel_id": 6,
+            "img": "https://i.ytimg.com/vi/tcPGDBm9DXw/maxresdefault.jpg",
+            "music": "https://duogminhtien.github.io/GludMusicAssets/audio/dao_nuong.mp3"
+        },
+        {
+            "id": 7,
+            "name": "Mây Hồng Đưa Lối | DatKaa x Prod. QT Beatz x CiiN",
+            "channel_id": 7,
+            "img": "https://i.ytimg.com/vi/Wl54qyS_IPI/maxresdefault.jpg",
+            "music": "https://duogminhtien.github.io/GludMusicAssets/audio/may_hong_dua_loi.mp3"
+        },
+        {
+            "id": 8,
+            "name": "Sầu Hồng Gai | Jombie x Tkan",
+            "channel_id": 4,
+            "img": "https://i.ytimg.com/vi/IMRdRGWXHnU/maxresdefault.jpg",
+            "music": "https://duogminhtien.github.io/GludMusicAssets/audio/sau_hong_gai.mp3"
+        },
+        {
+            "id": 9,
+            "name": "Cơn Mưa Chiều Ấy | DatKaa (Prod. QT Beatz)",
+            "channel_id": 7,
+            "img": "https://i.ytimg.com/vi/fgS39HdJ_kk/maxresdefault.jpg",
+            "music": "https://duogminhtien.github.io/GludMusicAssets/audio/con_mua_chieu_ay.mp3"
+        },
+        {
+            "id": 10,
+            "name": "Người Có Thương | DatKaa ft QT Beatz",
+            "channel_id": 7,
+            "img": "https://i.ytimg.com/vi/9qJmCOXk028/maxresdefault.jpg",
+            "music": "https://duogminhtien.github.io/GludMusicAssets/audio/nguoi_co_thuong.mp3"
+        },
+        {
+            "id": 11,
+            "name": "Phận Duyên Lỡ Làng | Phát Huy T4, Truzg",
+            "channel_id": 8,
+            "img": "https://o.rada.vn/data/image/2021/07/16/loi-bai-hat-phan-duyen-lo-lang-700.jpg",
+            "music": "https://duogminhtien.github.io/GludMusicAssets/audio/phan_duyen_lo_lang.mp3"
+        },
+        {
+            "id": 12,
+            "name": "Hạ Còn Vương Nắng | DatKaa x Kido x Prod. QT Beatz",
+            "channel_id": 7,
+            "img": "https://i.ytimg.com/vi/2YllmPaKhkY/maxresdefault.jpg",
+            "music": "https://duogminhtien.github.io/GludMusicAssets/audio/ha_con_vuong_nang.mp3"
+        }
+    ],
+    "channels": [{
+            "id": 0,
+            "name": "Không Tồn Tại",
+            "avatar": "https://duogminhtien.github.io/GludMusicAssets/img/not_exist.png"
+        },
+        {
+            "id": 1,
+            "name": "Nguyễn Hương Ly Official",
+            "avatar": "https://yt3.ggpht.com/7655yKly5zk30JSO2yJU_apHo2vpm71h3_BpWGca1XH92jxW18gKw1nFB4iIgACovnLpHu0J=s48-c-k-c0x00ffffff-no-nd-rj"
+        },
+        {
+            "id": 2,
+            "name": "NSND Bạch Tuyết",
+            "avatar": "https://yt3.ggpht.com/ytc/AKedOLRs2pV7BEOJnSm9hUe2pEJ3OPLx60rGvzO978QyEg=s48-c-k-c0x00ffffff-no-rj-mo"
+        },
+        {
+            "id": 3,
+            "name": "Như Việt",
+            "avatar": "https://yt3.ggpht.com/AnkqSWRHO7PXF0pZKveeKs5luuut2lbt03WSaCff4MSUHbxvDX0wGz1Ef91jkgv-pn28-b0bCw=s48-c-k-c0x00ffffff-no-nd-rj"
+        },
+        {
+            "id": 4,
+            "name": "G5R SQUAD Official",
+            "avatar": "https://yt3.ggpht.com/5aOgGUsektvKEeHqi9Heq3IH9uw3JBququjrjllgIIOyhT3xKPprJLhFqx-GOQezUqhRV_azlg=s48-c-k-c0x00ffffff-no-rj"
+        },
+        {
+            "id": 5,
+            "name": "Cafe Buồn",
+            "avatar": "https://yt3.ggpht.com/rgzzyiIv1Rp4g8ZYu44TYr-gcsXcxmxPkRrgEy1oSq9k29XhiriWfCXOwInB2Dy0Aemcuy1Gcg=s48-c-k-c0x00ffffff-no-rj"
+        },
+        {
+            "id": 6,
+            "name": "Hoàng Vương Official",
+            "avatar": "https://yt3.ggpht.com/2GJW3kdp8XYk08vRigbL-GdboJoWGIDcpHH_n1IF9PDX23jqlICLf3QQvTafj3hZhtQZN7UmATw=s48-c-k-c0x00ffffff-no-nd-rj"
+        },
+        {
+            "id": 7,
+            "name": "DatKaa Official",
+            "avatar": "https://yt3.ggpht.com/xICgZZnuQkjZoIdJxE-YzAV99VLH1IlTdu9UJMjkXupyd8-4tjmst_Vzioqsb4w8mQRnAjZR=s48-c-k-c0x00ffffff-no-nd-rj"
+        },
+        {
+            "id": 8,
+            "name": "HOA HỒNG DẠI MUSIC",
+            "avatar": "https://yt3.ggpht.com/ytc/AKedOLRop18nsLxJWJj3dz3Gx2VrJ5zdcN5NQohGlBa71w=s48-c-k-c0x00ffffff-no-rj"
+        }
+    ]
+}

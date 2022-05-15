@@ -82,6 +82,27 @@
             "channel_id": 7,
             "img": "https://i.ytimg.com/vi/2YllmPaKhkY/maxresdefault.jpg",
             "music": "https://duogminhtien.github.io/GludMusicAssets/audio/ha_con_vuong_nang.mp3"
+        },
+        {
+            "id": 13,
+            "name": "Độ Ta Không Độ Nàng | Thiên An",
+            "channel_id": 9,
+            "img": "https://i.ytimg.com/vi/U44j_OHK50M/maxresdefault.jpg",
+            "music": "https://duogminhtien.github.io/GludMusicAssets/audio/do_ta_khong_do_nang.mp3"
+        },
+        {
+            "id": 14,
+            "name": "Take Me To Your Heart | Michael Learns To Rock",
+            "channel_id": 10,
+            "img": "https://i.ytimg.com/vi/TbLT12eg-lw/maxresdefault.jpg",
+            "music": "https://duogminhtien.github.io/GludMusicAssets/audio/take_me_to_your_heart.mp3"
+        },
+        {
+            "id": 15,
+            "name": "Hai Chữ Yêu Thương Một Chữ Chờ | Mai Xuân Thứ",
+            "channel_id": 11,
+            "img": "https://i.ytimg.com/vi/MFxbqLm02TQ/maxresdefault.jpg",
+            "music": "https://duogminhtien.github.io/GludMusicAssets/audio/hai_chu_yeu_thuong_mot_chu_cho.mp3"
         }
     ],
     "channels": [{
@@ -128,6 +149,21 @@
             "id": 8,
             "name": "HOA HỒNG DẠI MUSIC",
             "avatar": "https://yt3.ggpht.com/ytc/AKedOLRop18nsLxJWJj3dz3Gx2VrJ5zdcN5NQohGlBa71w=s48-c-k-c0x00ffffff-no-rj"
+        },
+        {
+            "id": 9,
+            "name": "Thiên An Official",
+            "avatar": "https://yt3.ggpht.com/ytc/AKedOLSx1uiz0hWaQ7Qh0o3iQ33TS-WjV5yrY9D5v9ZltQ=s48-c-k-c0x00ffffff-no-rj"
+        },
+        {
+            "id": 10,
+            "name": "Michael Learns To Rock",
+            "avatar": "https://yt3.ggpht.com/ytc/AKedOLSXmLtbsO_zxmR-wrVO6UD1mYaqo_scqn6qlRowaQ=s48-c-k-c0x00ffffff-no-rj-mo"
+        },
+        {
+            "id": 11,
+            "name": "T Team",
+            "avatar": "https://yt3.ggpht.com/ytc/AKedOLSydIeNhwrlRRne1ZXbmJCEoed-DRPZCJcJGq-J=s48-c-k-c0x00ffffff-no-rj"
         }
     ]
 }

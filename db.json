@@ -103,6 +103,20 @@
             "channel_id": 11,
             "img": "https://i.ytimg.com/vi/MFxbqLm02TQ/maxresdefault.jpg",
             "music": "https://duogminhtien.github.io/GludMusicAssets/audio/hai_chu_yeu_thuong_mot_chu_cho.mp3"
+        },
+        {
+            "id": 16,
+            "name": "Có Không Giữ Mất Đừng Tìm | Trúc Nhân",
+            "channel_id": 12,
+            "img": "https://i.ytimg.com/vi/BfdYA_CkqSc/maxresdefault.jpg",
+            "music": "https://duogminhtien.github.io/GludMusicAssets/audio/co_khong_giu_mat_dung_tim.mp3"
+        },
+        {
+            "id": 17,
+            "name": "Bay Giữa Ngân Hà (Acoustic) | Hoàng Hải Dương x Yan Nguyễn",
+            "channel_id": 13,
+            "img": "https://i.ytimg.com/vi/c9VWYC4zDzU/maxresdefault.jpg",
+            "music": "https://duogminhtien.github.io/GludMusicAssets/audio/bay_giua_ngan_ha.mp3"
         }
     ],
     "channels": [{
@@ -164,6 +178,16 @@
             "id": 11,
             "name": "T Team",
             "avatar": "https://yt3.ggpht.com/ytc/AKedOLSydIeNhwrlRRne1ZXbmJCEoed-DRPZCJcJGq-J=s48-c-k-c0x00ffffff-no-rj"
+        },
+        {
+            "id": 12,
+            "name": "Trúc Nhân",
+            "avatar": "https://yt3.ggpht.com/M4--9r2LA3sZ00qLEP7aO5KIcaOWvv5q1eK8vtt5B6oKTrO7V7iqCXeUkhp7F0-b-GGjxfRRsg=s48-c-k-c0x00ffffff-no-nd-rj"
+        },
+        {
+            "id": 13,
+            "name": "NGUYỄN VĂN CHUNG MUSIC",
+            "avatar": "https://yt3.ggpht.com/k23cTz5Ek_x7rPIE2F8_xUe1TrndFcIvTm9L9SQ2ZBmDMLgKx8vejR02GvhoUSTIXrCsw1cTZQ=s48-c-k-c0x00ffffff-no-nd-rj"
         }
     ]
 }

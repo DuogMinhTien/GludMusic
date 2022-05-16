@@ -16,6 +16,9 @@ const searchBtn = $(".search-btn");
 //----------------------
 var musicList = undefined;
 
+//--------
+
+const ignoreFunction = $("#ignore-function");
 
 //----FOOTER------------
 const audioImg = document.querySelector("#audio-img");
@@ -29,10 +32,15 @@ const audioCurrent = $('#audio-time-current');
 const audioRange = document.querySelector("#audio-range");
 const audioVolume = $("#audio-volume");
 const audioVolumeRange = document.querySelector('#audio-volume-range');
+
+const shuffleAudio = $("#shuffle-audio");
+const repeatAudio = $("#repeat-audio");
+
 var musicBackgrounds;
 var musicDownloadPrivate;
 
 var audioImgAnimate;
+var canPlayAudio = false;
 //FUNCTION
 function handleInit() {
     audioImgAnimate = audioImg.animate([
@@ -71,11 +79,11 @@ function renderAudio(item) {
     let music_name = item.querySelector('.music-info__text__music-name').innerText.split(' | ');
     nameAudio.text(music_name[0]);
     singerAudio.text(music_name[1]);
-    audioDuration.text('Loading...');
+    audioDuration.text('...');
     setTimeout(function renderTime() {
         let text = item.querySelector('.music-time-private').innerText;
         let splitText = text.split(':');
-        if (text == 'Loading...')
+        if (text == '...')
             setTimeout(renderTime, 10)
         else {
             audioDuration.text(text);
@@ -85,15 +93,6 @@ function renderAudio(item) {
 
 }
 
-var canPlayAudio = false;
-
-audio.addEventListener('loadeddata', () => {
-    if (canPlayAudio) {
-        playAudio.removeClass('fade-loading');
-        playAudio.text('pause_circle');
-        canPlayAudio = false;
-    }
-})
 
 function setupSrcAudio(item) {
     const audioLink = item.querySelector('.music-download-private').href;
@@ -126,11 +125,15 @@ function playMusic(item) {
 
 function clickPlayMusic(item) {
     const musicFrame = item.closest('.music__frame');
-
-    if (item.innerText == 'play_arrow') {
-        playMusic(musicFrame);
-    } else {
-        pauseMusic(musicFrame);
+    if (musicFrame.classList.contains ('ignore-this-music')) {
+        alert ("Bài này đang bị bỏ qua, không thể phát được")
+    }
+    else {
+        if (item.innerText == 'play_arrow') {
+            playMusic(musicFrame);
+        } else {
+            pauseMusic(musicFrame);
+        }
     }
 };
 
@@ -145,12 +148,25 @@ function changeVolume(value) {
     audio.volume = value / 100;
 }
 
+function checkMusicIgnore (item) {
+    if (item.classList.contains ('ignore-this-music')) {
+        return false;
+    }
+    return true;
+}
+
 //CALL FUNCTION
 handleInit();
 
+//HANDLE EVENT 
 
-//fetch API
-
+audio.addEventListener('loadeddata', () => {
+    if (canPlayAudio) {
+        playAudio.removeClass('fade-loading');
+        playAudio.text('pause_circle');
+        canPlayAudio = false;
+    }
+})
 searchInput.on('input', () => {
     if (searchInput.val() != '')
         searchClose.css('display', 'block');
@@ -161,6 +177,21 @@ searchClose.on('click', () => {
     searchInput.val('');
     searchClose.css('display', 'none');
 })
+repeatAudio.on('click', () => {
+    repeatAudio.toggleClass ('active');
+})
+shuffleAudio.on('click', () => {
+    shuffleAudio.toggleClass ('active');
+})
+ignoreFunction.on('click', () => {
+    ignoreFunction.toggleClass ('active');
+    musicList.forEach (item => {
+        item.classList.toggle ('ignore-music--show');
+    })
+})
+
+
+//fetch API
 
 
 //render music
@@ -171,12 +202,13 @@ fetch(apiData)
             let channel = data.channels[song.channel_id];
             return `
                 <div class="music__frame" data-index="${index}">
+                    <input type="checkbox" name="ignore-music" class="ignore-music"/>
                     <div class="music-background" style="background-image: url(${song.img})">
                         <div class="music-control-private">
                             <a href="${song.music}" target="_blank" class="material-symbols-sharp music-download-private">download</a>
                             <span class="material-symbols-sharp music-icon-private">play_arrow</span>
                         </div>
-                        <span class="music-time-private">Loading...</span>
+                        <span class="music-time-private">...</span>
                     </div>
                     <div class="music-info">
                         <img class="music-info__avatar" src="${channel.avatar}" />
@@ -189,6 +221,17 @@ fetch(apiData)
         })
         html = htmls.join('');
         $('.body__main__music').append(html);
+        $$('.ignore-music').forEach ( (item, index) => {
+            item.addEventListener ('change', e => {
+                if (item.checked) {
+                    musicList[index].classList.add ('ignore-this-music');
+                    pauseMusic(musicList[index]);
+                }
+                else {
+                    musicList[index].classList.remove ('ignore-this-music');
+                }
+            })
+        })
         musicList = $$('.music__frame');
         nowIndexMusic = 0;
         setupSrcAudio(musicList[nowIndexMusic]);
@@ -237,24 +280,36 @@ fetch(apiData)
             audioRange.changeValue(Math.floor(audio.currentTime));
         })
         audio.addEventListener('ended', () => {
-            if (nowIndexMusic < musicList.length - 1)
-                playMusic(musicList[nowIndexMusic + 1]);
-            else
-                playMusic(musicList[0]);
+            let indexMusic = nowIndexMusic;
+            if (repeatAudio.hasClass ('active')) {
+                //ờ, có xử lý gì đâu :>>
+            }
+            else {    
+                do {
+                    indexMusic = (indexMusic) < musicList.length - 1 ? indexMusic + 1 : 0;
+                }
+                while (!checkMusicIgnore(musicList[indexMusic]));
+                
+            }
+            playMusic (musicList[indexMusic]);
         })
         previousAudio.on('click', () => {
             pauseMusic(musicList[nowIndexMusic]);
-            if (nowIndexMusic != 0)
-                playMusic(musicList[nowIndexMusic - 1]);
-            else
-                playMusic(musicList[musicList.length - 1]);
+            let indexMusic = nowIndexMusic;
+            do {
+                indexMusic = (indexMusic) > 0 ? indexMusic - 1 : musicList.length - 1;
+            }
+            while (!checkMusicIgnore(musicList[indexMusic]));
+            playMusic (musicList[indexMusic]);
         })
         nextAudio.on('click', () => {
             pauseMusic(musicList[nowIndexMusic]);
-            if (nowIndexMusic < musicList.length - 1)
-                playMusic(musicList[nowIndexMusic + 1]);
-            else
-                playMusic(musicList[0]);
+            let indexMusic = nowIndexMusic;
+            do {
+                indexMusic = (indexMusic) < musicList.length - 1 ? indexMusic + 1 : 0;
+            }
+            while (!checkMusicIgnore(musicList[indexMusic]));
+            playMusic (musicList[indexMusic]);
         })
         audioVolumeRange.addEventListener('input', () => {
             changeVolume(audioVolumeRange.value);

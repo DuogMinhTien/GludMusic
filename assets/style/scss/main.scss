@@ -205,6 +205,8 @@ $header-height: 75px;
             font-size: 1.6rem;
             padding: 10px;
             border-top: 1px solid #666;
+            cursor: pointer;
+            user-select: none;
             &:first-child {
                 border-top: none;
             }
@@ -241,6 +243,20 @@ $header-height: 75px;
             .music__frame {
                 flex-basis: calc(25% - 15px);
                 position: relative;
+                &.ignore-music--show {
+                    .ignore-music {
+                        display: block;
+                    }
+                }
+                &.ignore-this-music {
+                    .music-background, .music-info {
+                        opacity: 0.2;
+                    }
+                    &:hover .music-control-private {
+                        opacity: 0 !important;
+                        cursor: default !important;
+                    }
+                }
                 &.active .music-control-private {
                     opacity: 1 !important;
                 }
@@ -255,6 +271,16 @@ $header-height: 75px;
                 }
                 @media screen and (max-width: 850px) {
                     flex-basis: calc(50% - 15px);
+                }
+                .ignore-music {
+                    width: 35px;
+                    height: 35px;
+                    position: absolute;
+                    z-index: 10;
+                    top: 0;
+                    right: 0;
+                    display: none;
+                    
                 }
                 .music-background {
                     padding-bottom: 55%;
@@ -410,12 +436,22 @@ $header-height: 75px;
                 margin: 0 8px;
                 font-size: 2.4rem;
                 cursor: pointer;
+                padding: 6px;
+                border-radius: 100rem;
                 &:hover {
+                    background-color: rgba(255,255,255,0.2);
+                }
+                &.active {
                     color: $primary-color-light;
                 }
             }
             #play-audio {
                 font-size: 4.4rem;
+                padding: 0;
+                &:hover {
+                    background-color: transparent;
+                    color: $primary-color-light;
+                }
             }
         }
         &__range {
